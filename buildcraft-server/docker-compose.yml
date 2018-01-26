@@ -1,0 +1,19 @@
+version: "3"
+services:
+  buildcraft-server:
+    container_name: buildcraft-server
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+      - 8123:8123
+    environment:
+      - EULA=TRUE
+      - VERSION=1.7.10
+      - TYPE=FORGE
+      - FORGEVERSION=10.13.4.1558
+      - MOTD=A BuildCraft Server
+    volumes:
+      - /srv/docker/buildcraft-server:/data
+    tty: true
+    stdin_open: true
+    restart: always
