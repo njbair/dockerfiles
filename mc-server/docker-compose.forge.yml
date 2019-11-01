@@ -1,0 +1,14 @@
+version: "3"
+services:
+  server:
+    container_name: minecraft-forge-server
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      - EULA=TRUE
+      - VERSION=1.14.2
+      - TYPE=FORGE
+      - FORGEVERSION=26.0.16
+    volumes:
+      - /srv/docker/minecraft-forge-server:/data

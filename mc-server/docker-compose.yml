@@ -1,7 +1,6 @@
 version: "3"
 services:
-  server:
-    container_name: minecraft-server
+  mc-server:
     image: itzg/minecraft-server
     ports:
       - 25565:25565
@@ -9,3 +8,9 @@ services:
       - EULA=TRUE
     volumes:
       - /srv/docker/minecraft-server:/data
+  mc-web:
+    image: nginx:latest
+    ports:
+      - 25580:80
+    volumes:
+      - /srv/docker/minecraft-overviewer:/usr/share/nginx/html:ro
